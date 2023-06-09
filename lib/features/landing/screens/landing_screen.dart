@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/colors.dart';
+import 'package:whatsapp_clone/features/auth/screens/login_screen.dart';
+import 'package:whatsapp_clone/utils/colors.dart';
 import 'package:whatsapp_clone/widgets/custom_button.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({Key? key}) : super(key: key);
 
-  void navigateToLoginScreen(BuildContext context) {
-    //  Navigator.pushNamed(context, LoginScreen.routeName);
-  }
+  // void navigateToLoginScreen(BuildContext context) {
+  //   Navigator.pushNamed(context, LoginScreen.routeName);
+  // }
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -47,7 +48,14 @@ class LandingScreen extends StatelessWidget {
               width: size.width * 0.75,
               child: CustomButton(
                 text: 'AGREE AND CONTINUE',
-                onPressed: () => navigateToLoginScreen(context),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                },
               ),
             ),
           ],

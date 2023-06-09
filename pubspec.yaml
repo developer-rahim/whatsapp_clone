@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   change_app_package_name: ^1.1.0
   firebase_core: ^2.13.1
+  flutter_riverpod: ^2.3.6
+  country_picker: ^2.0.20
+  image_picker: ^0.8.7+5
+  enough_giphy_flutter: ^0.4.0
 
 dev_dependencies:
   flutter_test:
