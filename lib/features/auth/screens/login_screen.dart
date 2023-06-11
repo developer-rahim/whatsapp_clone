@@ -1,6 +1,7 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:whatsapp_clone/features/auth/controller/auth_controller.dart';
 import 'package:whatsapp_clone/utils/colors.dart';
 import 'package:whatsapp_clone/utils/utils.dart';
 import 'package:whatsapp_clone/widgets/custom_button.dart';
@@ -26,9 +27,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   void pickCountry() {
     showCountryPicker(
         context: context,
-        onSelect: (Country countryValue) {
+        onSelect: (Country countryName) {
           setState(() {
-            country = countryValue;
+            country = countryName;
           });
         });
   }
@@ -36,9 +37,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   void sendPhoneNumber() {
     String phoneNumber = phoneController.text.trim();
     if (country != null && phoneNumber.isNotEmpty) {
-      // ref
-      //     .read(authControllerProvider)
-      //     .signInWithPhone(context, '+${country!.phoneCode}$phoneNumber');
+      ref
+          .read(authControllerProvider)
+          .signInWithPhone(context, '+${country!.phoneCode.toString()}$phoneNumber');
     } else {
       showSnackBar(
         context: context,

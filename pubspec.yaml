@@ -20,7 +20,7 @@ version: 1.0.0+1
 
 environment:
   sdk: '>=3.0.3 <4.0.0'
-
+# Acess Token : EBD4F96A-29D0-47ED-A13D-B691D7317F1B
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
@@ -41,6 +41,9 @@ dependencies:
   country_picker: ^2.0.20
   image_picker: ^0.8.7+5
   enough_giphy_flutter: ^0.4.0
+  firebase_auth: ^4.6.2
+  cloud_firestore: ^4.8.0
+  firebase_storage: ^11.2.2
 
 dev_dependencies:
   flutter_test:
