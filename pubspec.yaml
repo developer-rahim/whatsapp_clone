@@ -45,6 +45,13 @@ dependencies:
   cloud_firestore: ^4.8.0
   firebase_storage: ^11.2.2
   flutter_contacts: ^1.1.6
+  flutter_sound: ^9.2.13
+  permission_handler: ^10.3.0
+  emoji_picker_flutter: ^1.6.1
+  path_provider: ^2.0.15
+  uuid: ^3.0.7
+  intl: ^0.18.1
+  
 
 dev_dependencies:
   flutter_test:

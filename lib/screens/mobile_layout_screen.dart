@@ -25,11 +25,17 @@ class MobileLayoutScreen extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              icon: const Icon(Icons.search, color: Colors.grey),
+              icon: const Icon(
+                Icons.search,
+                color: Colors.grey,
+              ),
               onPressed: () {},
             ),
             IconButton(
-              icon: const Icon(Icons.more_vert, color: Colors.grey),
+              icon: const Icon(
+                Icons.more_vert,
+                color: Colors.grey,
+              ),
               onPressed: () {},
             ),
           ],
@@ -66,7 +72,7 @@ class MobileLayoutScreen extends StatelessWidget {
           },
           backgroundColor: tabColor,
           child: const Icon(
-            Icons.comment,
+            Icons.add_comment,
             color: Colors.white,
           ),
         ),

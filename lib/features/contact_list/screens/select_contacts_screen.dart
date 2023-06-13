@@ -29,7 +29,14 @@ class SelectContactsScreen extends ConsumerWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const MobileChatScreen(),
+              //   ),
+              // );
+            },
             icon: const Icon(
               Icons.more_vert,
             ),

@@ -7,7 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:whatsapp_clone/common/repositories/common_firebase_storage_repository.dart';
 import 'package:whatsapp_clone/features/auth/screens/otp_screen.dart';
 import 'package:whatsapp_clone/features/auth/screens/user_information_screen.dart';
-import 'package:whatsapp_clone/models/user_model.dart';
+import 'package:whatsapp_clone/features/auth/models/user_model.dart';
 import 'package:whatsapp_clone/screens/mobile_layout_screen.dart';
 import 'package:whatsapp_clone/utils/utils.dart';
 
@@ -141,5 +141,11 @@ class AuthRepository {
         content: e.toString(),
       );
     }
+  }
+
+  Stream<UserModel> userData(String userId) {
+    return firestore!.collection("users").doc(userId).snapshots().map(
+          (event) => UserModel.fromMap(event.data()!),
+        );
   }
 }
