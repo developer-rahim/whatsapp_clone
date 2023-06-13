@@ -123,7 +123,7 @@ class AuthRepository {
 
       UserModel user = UserModel(
           groupId: [],
-          phoneNumber: auth!.currentUser!.uid,
+          phoneNumber: auth!.currentUser!.phoneNumber.toString(),
           profilePic: photoUrl,
           name: name,
           isOnline: true,
