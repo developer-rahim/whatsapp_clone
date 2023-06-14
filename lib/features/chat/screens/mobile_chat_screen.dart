@@ -5,19 +5,19 @@ import 'package:whatsapp_clone/features/auth/controller/auth_controller.dart';
 import 'package:whatsapp_clone/features/auth/models/user_model.dart';
 import 'package:whatsapp_clone/utils/colors.dart';
 import 'package:whatsapp_clone/features/chat/widget/bottom_chat_field.dart';
-import 'package:whatsapp_clone/widgets/chat_list.dart';
+import 'package:whatsapp_clone/features/chat/widget/chat_list.dart';
 
 class MobileChatScreen extends ConsumerWidget {
   const MobileChatScreen({
     Key? key,
     required this.name,
     required this.uid,
-   // required this.isGroupChat,
+    // required this.isGroupChat,
     required this.profilePic,
   }) : super(key: key);
   final String name;
   final String uid;
- // final bool isGroupChat;
+  // final bool isGroupChat;
   final String profilePic;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -63,8 +63,10 @@ class MobileChatScreen extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          const Expanded(
-            child: ChatList(),
+          Expanded(
+            child: ChatList(
+              reciverUserId: uid,
+            ),
           ),
           BottomChatField(
             recieverUserId: uid,

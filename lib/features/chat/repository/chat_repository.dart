@@ -44,14 +44,40 @@ class ChatRepositoy {
           var user = UserModel.fromMap(userData.data()!);
           contacts.add(
             ChatContact(
-                name: user.name,
-                profilePic: user.profilePic,
-                contactId: chatContact.contactId,
-                timeSent: chatContact.timeSent,
-                lastMessage: chatContact.lastMessage),
+              name: user.name,
+              profilePic: user.profilePic,
+              contactId: chatContact.contactId,
+              timeSent: chatContact.timeSent,
+              lastMessage: chatContact.lastMessage,
+            ),
           );
         }
         return contacts;
+      },
+    );
+  }
+
+  Stream<List<Message>> getChatStream(String reciverUserId) {
+    return firestore!
+        .collection('users')
+        .doc(auth!.currentUser!.uid)
+        .collection('chats')
+        .doc(reciverUserId)
+        .collection('messages')
+        .orderBy('timeSent')
+        .snapshots()
+        .map(
+      (event) {
+        List<Message> messages = [];
+        for (var document in event.docs) {
+          messages.add(
+            (Message.fromMap(
+              document.data(),
+            )),
+          );
+        }
+
+        return messages;
       },
     );
   }

@@ -20,6 +20,7 @@ class ContactsList extends ConsumerWidget {
           if (snapshot.data == null) {
             return const ShimmerListViewBuilder(
               itemHeight: 60,
+              itemCount: 5,
             );
           }
 
