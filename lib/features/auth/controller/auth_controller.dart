@@ -54,9 +54,10 @@ class AuthController {
     return authRepository.userData(userId);
   }
 
-  // void setUserState(bool isOnline) {
-  //   authRepository.setUserState(isOnline);
-  // }
+  void setUserState(bool isOnline) {
+    authRepository.setUserState(isOnline);
+  }
+
   void saveUserDataToFirebase(
       {BuildContext? context, String? name, File? profilePic}) {
     authRepository.saveUserDataToFirebase(
