@@ -5,6 +5,7 @@ import 'package:whatsapp_clone/features/chat/controller/chat_controller.dart';
 import 'package:whatsapp_clone/features/chat/models/chat_contact.dart';
 import 'package:whatsapp_clone/utils/colors.dart';
 import 'package:whatsapp_clone/features/chat/screens/mobile_chat_screen.dart';
+import 'package:whatsapp_clone/widgets/shimmer_listview_builder.dart';
 
 class ContactsList extends ConsumerWidget {
   const ContactsList({Key? key}) : super(key: key);
@@ -17,7 +18,9 @@ class ContactsList extends ConsumerWidget {
         stream: ref.watch(chatControllerProvider).chatContacts(),
         builder: (context, snapshot) {
           if (snapshot.data == null) {
-            return const CircularProgressIndicator();
+            return const ShimmerListViewBuilder(
+              itemHeight: 60,
+            );
           }
 
           return ListView.builder(

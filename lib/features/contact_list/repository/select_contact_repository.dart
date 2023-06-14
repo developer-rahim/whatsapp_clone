@@ -37,7 +37,7 @@ class SelecteContactRepository {
         var userData = UserModel.fromMap(document.data());
 
         String selectedPhoneNum = selectedContacts.phones[0].number.replaceAll(
-          ' ',
+          '-',
           '',
         );
 
