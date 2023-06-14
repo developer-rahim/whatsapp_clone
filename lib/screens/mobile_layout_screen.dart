@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:whatsapp_clone/features/auth/controller/auth_controller.dart';
 import 'package:whatsapp_clone/features/contact_list/screens/select_contacts_screen.dart';
 import 'package:whatsapp_clone/utils/colors.dart';
-import 'package:whatsapp_clone/features/chat/widget/contacts_list.dart';
+import 'package:whatsapp_clone/features/chat/widget/connected_users_list.dart';
 
 class MobileLayoutScreen extends ConsumerStatefulWidget {
   const MobileLayoutScreen({Key? key}) : super(key: key);
@@ -99,7 +99,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
             ],
           ),
         ),
-        body: const ContactsList(),
+        body: const ConnectedUsersList(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.push(

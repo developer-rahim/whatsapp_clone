@@ -7,8 +7,8 @@ import 'package:whatsapp_clone/utils/colors.dart';
 import 'package:whatsapp_clone/features/chat/screens/mobile_chat_screen.dart';
 import 'package:whatsapp_clone/widgets/shimmer_listview_builder.dart';
 
-class ContactsList extends ConsumerWidget {
-  const ContactsList({Key? key}) : super(key: key);
+class ConnectedUsersList extends ConsumerWidget {
+  const ConnectedUsersList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
