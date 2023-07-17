@@ -84,13 +84,13 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
     File file,
     MessageEnum messageEnum,
   ) {
-    // ref.read(chatControllerProvider).sendFileMessage(
-    //       context,
-    //       file,
-    //       widget.recieverUserId,
-    //       messageEnum,
-    //       widget.isGroupChat,
-    //     );
+    ref.read(chatControllerProvider).sendFileMessage(
+          context,
+          file,
+          widget.recieverUserId,
+          messageEnum,
+          widget.isGroupChat,
+        );
   }
 
   void selectImage() async {
