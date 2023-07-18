@@ -16,7 +16,7 @@ class BottomChatField extends ConsumerStatefulWidget {
   const BottomChatField({
     Key? key,
     required this.recieverUserId,
-    required this.isGroupChat,
+    this.isGroupChat = false,
   }) : super(key: key);
 
   @override
@@ -110,12 +110,12 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
   void selectGIF() async {
     final gif = await pickGIF(context);
     if (gif != null) {
-      // ref.read(chatControllerProvider).sendGIFMessage(
-      //       context,
-      //       gif.url,
-      //       widget.recieverUserId,
-      //       widget.isGroupChat,
-      //     );
+      ref.read(chatControllerProvider).sendGIFMessage(
+            context,
+            gif.url,
+            widget.recieverUserId,
+            false,
+          );
     }
   }
 
